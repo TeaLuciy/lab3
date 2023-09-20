@@ -14,21 +14,20 @@ int main()
         while((c=getchar()) != '\n'){}
     }
 
-
-    printf("%gx^2",a); 
+    printf("%gx^2",a);
     if(b<0){printf("-%gx", b);}
-    else if (b>0){printf("+%gx", b);}  // красивый вывод данного уравнения ( ´ ω ` )
+    else if (b>0){printf("+%gx", b);}  // красивый вывод данного уравнения 
     if(c<0){printf("-%g", c);}
     else if(c>0){printf("+%g", c);}
-    printf("\n");
+    printf("=0\n");
 
+    D = b*b -4*a*c;
 
-    D = b*b -4*a*c; //решение уравнения
     if (D<0) // дискриминант <0 ==> i
     {
         x11 = (-b)/(2*a);
         x12 = pow(-D,0.5)/(2*a);
-        if (b!=0) {printf("%g+%g*i %g-%g*i", x11, x12, x11, x12);}
+        if (b!=0) {printf("%g+%g*i\n %g-%g*i", x11, x12, x11, x12);}
         else {printf("%g*i -%g*i", x12, x12);}
         
     }
