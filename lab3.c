@@ -14,6 +14,7 @@ int main()
         while((c=getchar()) != '\n'){}
     }
 
+
     printf("%gx^2",a); 
     if(b<0){printf("-%gx", b);}
     else if (b>0){printf("+%gx", b);}  // красивый вывод данного уравнения ( ´ ω ` )
