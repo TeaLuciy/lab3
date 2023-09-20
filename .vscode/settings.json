@@ -1,0 +1,10 @@
+{
+    "makefile.makePath": "make",
+    "makefile.launchConfigurations": [
+        {
+            "cwd": ".",
+            "binaryPath": "./lab3",
+            "binaryArgs": []
+        }
+    ]
+}
