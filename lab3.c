@@ -1,46 +1,93 @@
 #include <stdio.h>
 #include <math.h>
 
-int main()
+int Dotric(double D, double a, double b)
 {
-    float a, b, c, D, x1, x2, x11, x12;
-    int n = 0;
-    printf("ax^2+bx+c\n");
-    printf("vvedite koef \n");
-    while ((scanf("%f %f %f", &a, &b, &c ) !=3 ) || (a == 0)) // проверка ввода
+    double x1, x2;
+    x1 = (-b) / (2 * a);
+    x2 = pow(-D, 0.5) / (2 * a);
+    if (b != 0)
+    {
+        printf("%lg+%lg*i\n %lg-%lg*i", x1, x2, x1, x2);
+    }
+    else
+    {
+        printf("%lg*i -%lg*i\n", x2, x2);
+    }
+}
+
+int Dnol(double D, double a, double b)
+{
+    double x1;
+    x1 = (-b) / (2 * a);
+    printf("%lg\n", x1);
+}
+
+int Basa(double D, double a, double b)
+{
+    double x1, x2;
+    x1 = (-b + pow(D, 0.5)) / (2 * a);
+    x2 = (-b - pow(D, 0.5)) / (2 * a);
+    printf("%lg %lg\n", x1, x2);
+}
+
+int vivod(double a, double b, double c)
+{
+    printf("%lgx^2", a);
+    if (b < 0)
+    {
+        printf("-%lgx", b);
+    }
+    else if (b > 0)
+    {
+        printf("+%lgx", b);
+    }                           // красивый вывод данного уравнения
+    if (c < 0)
+    {
+        printf("-%lg", c);
+    }
+    else if (c > 0)
+    {
+        printf("+%lg", c);
+    }
+    printf("=0\n");
+}
+
+void vvod(double *a, double *b, double *c)
+{
+    while ((scanf("%lf %lf %lf", a, b, c) != 3) || (a == 0)) // проверка ввода
     {
         printf("vvedite snova\n");
         int c;
-        while((c=getchar()) != '\n'){}
+        while ((c = getchar()) != '\n')
+        {
+        }
     }
+}
 
-    printf("%gx^2",a);
-    if(b<0){printf("-%gx", b);}
-    else if (b>0){printf("+%gx", b);}  // красивый вывод данного уравнения 
-    if(c<0){printf("-%g", c);}
-    else if(c>0){printf("+%g", c);}
-    printf("=0\n");
+//---------------------------------------------------------------------------------------
 
-    D = b*b -4*a*c;
+int main()
+{
+    double a, b, c, D, x1, x2, x11, x12;
+    int n = 0;
+    printf("ax^2+bx+c\n");
+    printf("vvedite koef \n");
+    vvod(&a, &b, &c);
 
-    if (D<0) // дискриминант <0 ==> i
+    vivod(a, b, c); // красивый вывод данного уравнения
+    D = b * b - 4 * a * c;
+
+    if (D < 0) // дискриминант <0 ==> i
     {
-        x11 = (-b)/(2*a);
-        x12 = pow(-D,0.5)/(2*a);
-        if (b!=0) {printf("%g+%g*i\n %g-%g*i", x11, x12, x11, x12);}
-        else {printf("%g*i -%g*i", x12, x12);}
-        
+        Dotric(D, a, b);
     }
-    else if (D==0) // дискриминант 0 ==> один корень 
+    else if (D == 0) // дискриминант 0 ==> один корень
     {
-        x1 = (-b)/(2*a);
-        printf("%g", x1);
+        Dnol(D, a, b);
     }
     else // два обычных корня
     {
-        x1= (-b+pow(D,0.5))/(2*a);
-        x2 = (-b-pow(D,0.5))/(2*a);
-        printf("%g %g", x1, x2);
-    } 
-    
+        Basa(D, a, b);
+    }
 }

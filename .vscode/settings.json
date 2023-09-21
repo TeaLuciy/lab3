@@ -5,6 +5,11 @@
             "cwd": ".",
             "binaryPath": "./lab3",
             "binaryArgs": []
+        },
+        {
+            "cwd": "/home/tea/git/lab3",
+            "binaryPath": "/home/tea/git/lab3/lab3",
+            "binaryArgs": []
         }
     ]
 }
