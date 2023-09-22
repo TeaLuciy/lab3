@@ -31,7 +31,7 @@ int Basa(double D, double a, double b)
     printf("%lg %lg\n", x1, x2);
 }
 
-int vivod(double a, double b, double c)
+void output(double a, double b, double c)
 {
     printf("%lgx^2", a);
     if (b < 0)
@@ -53,7 +53,7 @@ int vivod(double a, double b, double c)
     printf("=0\n");
 }
 
-void vvod(double *a, double *b, double *c)
+void input(double *a, double *b, double *c)
 {
     while ((scanf("%lf %lf %lf", a, b, c) != 3) || (a == 0)) // проверка ввода
     {
@@ -73,9 +73,9 @@ int main()
     int n = 0;
     printf("ax^2+bx+c\n");
     printf("vvedite koef \n");
-    vvod(&a, &b, &c);
+    input(&a, &b, &c);
 
-    vivod(a, b, c); // красивый вывод данного уравнения
+    output(a, b, c); // красивый вывод данного уравнения
     D = b * b - 4 * a * c;
 
     if (D < 0) // дискриминант <0 ==> i
