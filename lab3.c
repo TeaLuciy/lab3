@@ -5,7 +5,7 @@ int Dotric(double D, double a, double b)
 {
     double x1, x2;
     x1 = (-b) / (2 * a);
-    x2 = pow(-D, 0.5) / (2 * a);
+    x2 = sqrt(-D) / (2 * a);
     if (b != 0)
     {
         printf("%lg+%lg*i\n %lg-%lg*i", x1, x2, x1, x2);
@@ -26,8 +26,8 @@ int Dnol(double D, double a, double b)
 int Basa(double D, double a, double b)
 {
     double x1, x2;
-    x1 = (-b + pow(D, 0.5)) / (2 * a);
-    x2 = (-b - pow(D, 0.5)) / (2 * a);
+    x1 = (-b + sqrt(D)) / (2 * a);
+    x2 = (-b - sqrt(D)) / (2 * a);
     printf("%lg %lg\n", x1, x2);
 }
 
