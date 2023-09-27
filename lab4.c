@@ -7,33 +7,41 @@ int nextfib(int f1, int f2)
     return f1 + f2;
 }
 
+double new_relation(int fib2, int fib3)
+{
+    return 1.0 * fib3 / fib2;
+}
 
-double approximate(double t)
+double old_relation(int fib1, int fib2)
+{
+    return 1.0 * fib2 / fib1;
+}
+
+
+double approximate(double accuracy)
 {   
     int fib1, fib2, fib3;
-    double new_relation, old_relation;
     fib1=1;
     fib2=1;
     fib3=2;
     do
     {
-        old_relation = 1.0 * fib2 / fib1;
-        new_relation = 1.0 * fib3 / fib2;
-
         fib1 = fib2;
         fib2 = fib3;
         fib3 = nextfib(fib1, fib2);
-    } while (fabs(old_relation - new_relation) > t);
+    } while (fabs(old_relation(fib1, fib2) - new_relation(fib2, fib3)) > accuracy);
 
-    return new_relation;
+    return new_relation(fib2, fib3);
 
 }
 
 int main()
 {
-    double tochnost, new_relation, old_relation;
-
-    scanf("%lg", &tochnost);
-
-    printf("%.10g\nAbsolute=%.10lf\n", approximate(tochnost), ((1+sqrt(5))/2));
+    double accuracy, golden_ratio, appr;
+    printf("tochnost=");
+    scanf("%lg", &accuracy);
+    golden_ratio = ((1+sqrt(5))/2);  // formula 
+    appr = approximate(accuracy);
+    printf("%.10g\nAbsolute=%.10lf\n", appr, golden_ratio);
+    printf("pogreshnost=%g\n", golden_ratio - appr);
 }
