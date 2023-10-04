@@ -1,26 +1,25 @@
 #include <stdio.h>
-#include <math.h>
 
 long long  input()
 {
-    long long  a;
-    while ((scanf("%lld", &a) != 1) || (a<=0)) // проверка ввода
+    long long  new_num;
+    while ((scanf("%lld", &new_num) != 1) || (new_num<=0)) // проверка ввода
     {
-        printf("vvedite snova\n");
+        printf("формат не верен\nввeдитe снова\n");
         int c;
         while ((c = getchar()) != '\n');
     }
-    return a;
+    return new_num;
 }
 
 long long newbase( long long base)
 {
-    long long c;
-    c = base;
-        while(c != 0)
+    long long count;
+    count = base;  
+        while(count != 0)   // удвоенние колличества знаков
     {
-        c=c/10;
-        base=base*10;
+        count=count/10;    
+        base=base*10; 
     }
 }
 
@@ -30,6 +29,6 @@ int main()
     base = input();
     //printf("size=%d; %lld\n", sizeof(base), base);
     result = base;
-    result += newbase(base);
-    printf("%lld\n", result);
+    result += newbase(base);  
+    printf("ответ: %lld\n", result);
 }
