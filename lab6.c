@@ -36,7 +36,7 @@ char digit(int n)   //перевод цифры в сс
     return sixt[0];
 }
 
-void perevodcel(int cel, char *curr, int ss, int sign)  // перевод целой части в сс
+char* perevodcel(int cel, char *curr, int ss, int sign)  // перевод целой части в сс
 {
     double ost;
 
@@ -53,7 +53,7 @@ void perevodcel(int cel, char *curr, int ss, int sign)  // перевод цел
         *curr='-';
     }
     
-    printf("%s", curr);
+    return curr;
 
 }
 
@@ -82,7 +82,6 @@ void perevoddrobn(double drobn, char *mid, int ss) // перевод дробн�
         }
         drobn = ost - (int)ost;
     }
-    printf("%s", mid);
 
 }
 
@@ -100,28 +99,24 @@ void perevod(double num, int ss)
     num = fabs(num);
     cel = (int)num;  // целая часть числа
     drobn = (num - cel); // дробная часть числа
-    perevodcel(cel, curr, ss, sign);
+    curr=perevodcel(cel, curr, ss, sign);
 
     if (drobn !=0)
     {
         perevoddrobn(drobn, mid++, ss);
     }
-    
-
+    printf("\n");
+    printf("%s", curr);
+    printf("\n");
 }
-
-
 
 int main()
 {
     double num;
     int ss;
-
-
-
-
-
+    printf("number:");
     num=input();
+    printf("\nnotation: ");
     ss=inputss();
     perevod(num, ss);
     return 0;
