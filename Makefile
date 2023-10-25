@@ -11,3 +11,6 @@ rk: rk.c
 	gcc -m64 -g2 rk.c -lm -o rk
 lab6: lab6.c
 	gcc -g2 lab6.c -o lab6
+
+lab7: lab7.c
+	gcc -g2 lab7.c -o lab7
