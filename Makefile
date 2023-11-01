@@ -14,3 +14,5 @@ lab6: lab6.c
 
 lab7: lab7.c
 	gcc -g2 lab7.c -o lab7
+lab8: lab8.c
+	gcc -g2 lab8.c -lm -o lab8
