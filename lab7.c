@@ -20,11 +20,11 @@ int main()
         {
             cc+=1;
         }
-        if (isalpha(c))
+        if (character>='A'&&character<='Z')||(character>='a'&&character<='z'))
         {
             calpha+=1;
         }
-        if (isdigit(c))
+        if ((character>='0'&&character<='9'))
         {
             cd+=1;
         }
