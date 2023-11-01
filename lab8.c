@@ -13,7 +13,7 @@ int difsgn(float a, float b)
         return 0;
     }
 }
-float mid(float a, float b) //[a;b]
+float mid(float a, float b) // середина отрезка [a;b]
 {
     float c;
     c =(a + b) / 2;
@@ -32,9 +32,7 @@ int main()
 
     while (fabs(f(b)) > ACCURACY)
     {
-        printf("%f\n", f(b));
         b = mid(a,c);
-        printf("%f    %f\n", f(a), f(b));
         if (difsgn(f(a),f(b)))
         {
             c=b;
@@ -49,14 +47,3 @@ int main()
     printf("perfect= %f\n", PERFECT);
     return 0;
 }
-/*
-
--1 1
-
-(+)0 (-)1
-
-(+)0 (-)0.5
-
-
-
-*/
