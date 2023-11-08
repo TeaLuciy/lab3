@@ -9,12 +9,15 @@ lab5: lab5.c
 
 rk: rk.c
 	gcc -m64 -g2 rk.c -lm -o rk
+	
 lab6: lab6.c
 	gcc -g2 lab6.c -o lab6
 
 lab7: lab7.c
 	gcc -g2 lab7.c -o lab7
+
 lab8: lab8.c
 	gcc -g2 lab8.c -lm -o lab8
+
 lab9: lab9.c
 	gcc -g2 lab9.c -o lab9
