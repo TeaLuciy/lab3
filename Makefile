@@ -21,3 +21,5 @@ lab8: lab8.c
 
 lab9: lab9.c
 	gcc -g2 lab9.c -o lab9
+rk2: rk2.c
+	gcc -g2 rk2.c -o rk2
