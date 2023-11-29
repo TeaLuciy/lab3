@@ -27,3 +27,9 @@ rk2: rk2.c
 
 lab10: lab10.c
 	gcc -g2 lab10.c -o lab10
+
+lab11: lab11.c
+	gcc -g2 lab11.c -o lab11
+
+11n: 11n.c
+	gcc -g2 11n.c -o 11n
