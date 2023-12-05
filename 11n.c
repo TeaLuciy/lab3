@@ -39,7 +39,7 @@ T pop(Node **head)
     return tmpp;
 }
 
-char* removeNonAlphaChars(char* word)
+T removeNonAlphaChars(T word)
 {
     int i, j;
     for (i = 0, j = 0; word[i]; i++)
@@ -61,7 +61,7 @@ void processInput(struct Node** stack) {
         removeNonAlphaChars(word);
         if (word[0] != '\0')
         {
-            char* newWord = (char*)malloc((strlen(word) + 1) * sizeof(char));
+            T newWord = (T)malloc((strlen(word) + 1) * sizeof(char));
             strcpy(newWord, word);
             push(stack, newWord);
         }
@@ -76,10 +76,19 @@ void printLinkedList(const Node *head) {
 	printf("\n");
 }
 
+void deleteList(Node **head) {
+    while ((*head)->next) {
+        pop(head);
+        *head = (*head)->next;
+    }
+    free(*head);
+}
+
 void main()
 {
     Node *head = NULL;
     processInput(&head);
     printf("\n");
     printLinkedList(head);
+    deleteList(&head);
 }
