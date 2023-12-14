@@ -20,21 +20,6 @@ void push(Node **head, T data)
     *head = tmp;
 }
 
-T pop(Node **head)
-{   
-    T tmpp;
-    Node *tmp = NULL;
-    if (head == NULL)
-    {
-        exit(-1);
-    }
-    tmp = (*head);
-    tmpp = tmp->value;
-    *head = (*head)->next;
-    free(tmp);
-    return tmpp;
-}
-
 T removeNonGraphChars(T word)
 {
     int i, j;
